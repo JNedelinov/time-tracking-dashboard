@@ -1,4 +1,160 @@
+@font-face {
+  font-family: 'Rubic-Italic';
+  src: url('../../assets/fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf');
+}
+@font-face {
+  font-family: 'Rubic';
+  src: url('../../assets/fonts/Rubik/Rubik-VariableFont_wght.ttf') format('opentype');
+  font-weight: 100 900;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  background-color: black;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-family: 'Rubic', sans-serif;
+  font-weight: lighter;
+  background-color: hsl(226, 43%, 10%);
   color: white;
+}
+body img {
+  width: 100%;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.user-card,
+.timesheet-card {
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: hsl(235, 46%, 20%);
+}
+.user-card .user {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: hsl(246, 80%, 60%);
+  border-radius: inherit;
+}
+.user-card .user .avatar {
+  display: flex;
+  max-width: 4rem;
+  width: 4rem;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+.user-card .user .name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.user-card .user .name p:first-child {
+  color: hsl(236, 100%, 87%);
+  font-size: 0.938rem;
+  line-height: 1.125rem;
+}
+.user-card .user .name p:nth-child(2) {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+.user-card .time-span {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 3rem;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.313rem;
+  font-weight: 400;
+}
+.user-card .time-span .btn {
+  color: hsl(235, 45%, 61%);
+}
+.timesheet-card.work {
+  background-color: hsl(15, 100%, 70%);
+}
+.timesheet-card.play {
+  background-color: hsl(195, 74%, 62%);
+}
+.timesheet-card.study {
+  background-color: hsl(348, 100%, 68%);
+}
+.timesheet-card.exercise {
+  background-color: hsl(145, 58%, 55%);
+}
+.timesheet-card.social {
+  background-color: hsl(264, 64%, 52%);
+}
+.timesheet-card.self-care {
+  background-color: hsl(43, 84%, 65%);
+}
+.timesheet-card .banner {
+  padding-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.timesheet-card .banner img {
+  position: absolute;
+  top: -0.75rem;
+  right: 1rem;
+  max-width: 5rem;
+}
+.timesheet-card .category {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+  border-radius: 15px;
+  background-color: hsl(235, 46%, 20%);
+}
+.timesheet-card .category .info,
+.timesheet-card .category .total-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.timesheet-card .category .info {
+  font-size: 1.125rem;
+  line-height: 1.313rem;
+  font-weight: 600;
+}
+.timesheet-card .category .info .btn {
+  align-self: self-start;
+  font-weight: bold;
+}
+.timesheet-card .category .info .btn,
+.timesheet-card .category .total-time p:nth-child(2) {
+  color: hsl(236, 100%, 87%);
+}
+.timesheet-card .category .total-time p:nth-child(1) {
+  font-size: 2rem;
+  line-height: 2.375rem;
+}
+.timesheet-card .category .total-time p:nth-child(2) {
+  font-size: 0.938rem;
+  line-height: 1.125rem;
+}
+button.btn {
+  border: none;
+  background: transparent;
+}
+button.btn.active {
+  color: white !important;
+}
+button.btn:hover {
+  cursor: pointer;
+  color: white !important;
 }
