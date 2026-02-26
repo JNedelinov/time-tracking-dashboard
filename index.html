@@ -1,82 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="/styles/css/styles.css">
-  <script src="/scripts/main.js" defer></script>
-  
-  <title>Frontend Mentor | Time tracking dashboard</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/styles/css/styles.css" />
+    <script src="/scripts/main.js" defer></script>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Time tracking dashboard</title>
 
-  Report for
-  Jeremy Robson
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- grid -->
+    <div id="container">
+      <!-- this will also be grid with overlapping elements -->
+      <div class="user-card">
+        <div class="user">
+          <div class="avatar">
+            <img src="/images/image-jeremy.png" alt="" />
+          </div>
+          <div class="name">
+            <p>Report for</p>
+            <p>Jeremy Robson</p>
+          </div>
+        </div>
+        <div class="time-span">
+          <button class="btn">Daily</button>
+          <button class="btn active">Weekly</button>
+          <button class="btn">Monthly</button>
+        </div>
+      </div>
 
-  Daily
-  Weekly
-  Monthly
+      <!-- grid with overlapping  -->
+      <div class="timesheet-card work">
+        <div class="banner">
+          <img src="./images/icon-work.svg" alt="" />
+        </div>
+        <div class="category">
+          <div class="info">
+            <p>Work</p>
+            <button class="btn">...</button>
+          </div>
+          <div class="total-time">
+            <p class="curr-hours">32hrs</p>
+            <p>Last Week - 37hrs</p>
+          </div>
+        </div>
+      </div>
 
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
+      <div class="timesheet-card play">
+        <div class="banner">
+          <img src="./images/icon-play.svg" alt="" />
+        </div>
+        <div class="category">
+          <div class="info">
+            <p>Play</p>
+            <button class="btn">...</button>
+          </div>
+          <div class="total-time">
+            <p class="curr-hours">32hrs</p>
+            <p class="prev-hours">Last Week - 37hrs</p>
+          </div>
+        </div>
+      </div>
 
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
+      <div class="timesheet-card study">
+        <div class="banner">
+          <img src="./images/icon-study.svg" alt="" />
+        </div>
+        <div class="category">
+          <div class="info">
+            <p>Study</p>
+            <button class="btn">...</button>
+          </div>
+          <div class="total-time">
+            <p class="curr-hours">32hrs</p>
+            <p class="prev-hours">Last Week - 37hrs</p>
+          </div>
+        </div>
+      </div>
 
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
+      <div class="timesheet-card exercise">
+        <div class="banner">
+          <img src="./images/icon-exercise.svg" alt="" />
+        </div>
+        <div class="category">
+          <div class="info">
+            <p>Exercise</p>
+            <button class="btn">...</button>
+          </div>
+          <div class="total-time">
+            <p class="curr-hours">32hrs</p>
+            <p class="prev-hours">Last Week - 37hrs</p>
+          </div>
+        </div>
+      </div>
 
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
+      <div class="timesheet-card social">
+        <div class="banner">
+          <img src="./images/icon-social.svg" alt="" />
+        </div>
+        <div class="category">
+          <div class="info">
+            <p>Social</p>
+            <button class="btn">...</button>
+          </div>
+          <div class="total-time">
+            <p class="curr-hours">32hrs</p>
+            <p class="prev-hours">Last Week - 37hrs</p>
+          </div>
+        </div>
+      </div>
 
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
+      <div class="timesheet-card self-care">
+        <div class="banner">
+          <img src="./images/icon-self-care.svg" alt="" />
+        </div>
+        <div class="category">
+          <div class="info">
+            <p>Self-care</p>
+            <button class="btn">...</button>
+          </div>
+          <div class="total-time">
+            <p class="curr-hours">32hrs</p>
+            <p class="prev-hours">Last Week - 37hrs</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
+  </body>
 </html>
