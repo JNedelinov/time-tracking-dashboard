@@ -158,3 +158,29 @@ button.btn:hover {
   cursor: pointer;
   color: white !important;
 }
+@media (min-width: 375px) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #container .user-card {
+    grid-column: span 3;
+  }
+  #container .user-card .time-span .btn:nth-child(1) {
+    text-align: right;
+  }
+  #container .user-card .time-span .btn:nth-child(3) {
+    text-align: left;
+  }
+  #container .timesheet-card .category {
+    height: 100%;
+  }
+  #container .timesheet-card .total-time {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #container .timesheet-card .total-time .curr-hours {
+    font-size: 3.5rem;
+    line-height: 4.125rem;
+  }
+}
