@@ -43,7 +43,7 @@ body img {
 .user-card,
 .timesheet-card {
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 0.938rem;
   background-color: hsl(235, 46%, 20%);
 }
 .user-card .user {
@@ -58,7 +58,7 @@ body img {
   display: flex;
   max-width: 4rem;
   width: 4rem;
-  border: 3px solid white;
+  border: 0.188rem solid white;
   border-radius: 50%;
 }
 .user-card .user .name {
@@ -122,7 +122,7 @@ body img {
   flex-direction: column;
   gap: 0.5rem;
   height: 100%;
-  border-radius: 15px;
+  border-radius: 0.938rem;
   background-color: hsl(235, 46%, 20%);
 }
 .timesheet-card .category:hover {
