@@ -16,8 +16,6 @@ const userCard = `<div class="user-card">
       </div>
 `;
 
-const container = document.getElementById('container');
-
 (async () => {
   container.classList.toggle('loading');
   container.innerHTML = `<div>Loading...<div>`;
@@ -35,8 +33,6 @@ const container = document.getElementById('container');
     let currentlyActiveBtn = document.querySelector(
       '.user-card .time-span button.btn.active',
     );
-
-    console.log(document.querySelectorAll('.user-card .time-span button.btn'));
 
     document
       .querySelectorAll('.user-card .time-span button.btn')
@@ -79,6 +75,7 @@ function renderTimesheets(timeRange, data) {
     const titleLC = title.toLowerCase();
     const iconName =
       titleLC.length > 1 ? titleLC.split(' ').join('-') : titleLC;
+    // ! SOMETHING THAT I LEARNED - insertAdjacentHTML
     container.insertAdjacentHTML(
       'beforeend',
       `<div class="timesheet-card ${iconName}">
