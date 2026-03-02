@@ -77,11 +77,13 @@ function renderTimesheets(timeRange, data) {
 
   data.forEach(({ title, timeframes }) => {
     const titleLC = title.toLowerCase();
+    const iconName =
+      titleLC.length > 1 ? titleLC.split(' ').join('-') : titleLC;
     container.insertAdjacentHTML(
       'beforeend',
-      `<div class="timesheet-card ${titleLC}">
+      `<div class="timesheet-card ${iconName}">
         <div class="banner">
-          <img src="./images/icon-${titleLC.length > 1 ? titleLC.split(' ').join('-') : titleLC}.svg" alt="${titleLC} icon" />
+          <img src="./images/icon-${iconName}.svg" alt="${titleLC} icon" />
         </div>
         <div class="category">
           <div class="info">
