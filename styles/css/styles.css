@@ -28,6 +28,13 @@ body {
 body img {
   width: 100%;
 }
+#container.loading,
+#container.no-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 #container {
   display: flex;
   flex-direction: column;
@@ -162,13 +169,13 @@ button.btn:hover {
   cursor: pointer;
   color: white !important;
 }
-@media (min-width: 600px) {
+@media (min-width: 460px) {
   #container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   #container .user-card {
-    grid-column: span 3;
+    grid-column: span 2;
   }
   #container .user-card .time-span .btn:nth-child(1) {
     text-align: right;
@@ -186,6 +193,14 @@ button.btn:hover {
   #container .timesheet-card .total-time .curr-hours {
     font-size: 3.5rem;
     line-height: 4.125rem;
+  }
+}
+@media (min-width: 600px) {
+  #container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #container .user-card {
+    grid-column: span 3;
   }
 }
 @media (min-width: 1280px) {

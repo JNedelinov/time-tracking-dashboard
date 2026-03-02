@@ -84,6 +84,14 @@ body {
   }
 }
 
+#container.loading,
+#container.no-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #container {
   display: flex;
   flex-direction: column;
@@ -258,12 +266,12 @@ button.btn {
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 460px) {
   #container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     .user-card {
-      grid-column: span 3;
+      grid-column: span 2;
 
       .time-span {
         .btn {
@@ -292,6 +300,15 @@ button.btn {
           line-height: @tp-1-l-height;
         }
       }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  #container {
+    grid-template-columns: repeat(3, 1fr);
+    .user-card {
+      grid-column: span 3;
     }
   }
 }
