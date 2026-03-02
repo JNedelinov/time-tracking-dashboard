@@ -1,0 +1,338 @@
+// TODO: Try and add theme switcher (dataset? | or smth else)
+
+@font-face {
+  font-family: 'Rubic-Italic';
+  src: url('../../assets/fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'Rubic';
+  src: url('../../assets/fonts/Rubik/Rubik-VariableFont_wght.ttf')
+    format('opentype');
+  font-weight: 100 900;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@spacing-0: 0rem;
+@spacing-100: 0.5rem;
+@spacing-200: 1rem;
+@spacing-300: 1.5rem;
+@spacing-400: 2rem;
+@spacing-500: 2.5rem;
+
+// Primary
+@Purple-600: hsl(246, 80%, 60%);
+@Orange-300-work: hsl(15, 100%, 70%);
+@Blue-300-play: hsl(195, 74%, 62%);
+@Pink-400-study: hsl(348, 100%, 68%);
+@Green-400-exercise: hsl(145, 58%, 55%);
+@Purple-700-social: hsl(264, 64%, 52%);
+@Yellow-300-self-care: hsl(43, 84%, 65%);
+
+// Neutral
+@Navy-800: #33397a;
+@Navy-950: hsl(226, 43%, 10%);
+@Navy-900: hsl(235, 46%, 20%);
+@Purple-500: hsl(235, 45%, 61%);
+@Navy-200: hsl(236, 100%, 87%);
+
+// Typography
+@tp-1-size: 3.5rem;
+@tp-1-l-height: 4.125rem;
+
+@tp-2-size: 2.5rem;
+@tp-2-l-height: 2.938rem;
+
+@tp-3-size: 2rem;
+@tp-3-l-height: 2.375rem;
+
+@tp-4-size: 1.5rem;
+@tp-4-l-height: 1.75rem;
+
+@tp-5-size: 1.125rem;
+@tp-5-l-height: 1.313rem;
+@tp-5-md-weight-: 600;
+@tp-5-reg-weight-: 400;
+
+@tp-6-size: 0.938rem;
+@tp-6-l-height: 1.125rem;
+
+body {
+  min-height: 100vh;
+
+  padding: @spacing-400 @spacing-200;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  font-family: 'Rubic', sans-serif;
+  font-weight: lighter;
+
+  background-color: @Navy-950;
+  color: white;
+
+  img {
+    width: 100%;
+  }
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  gap: @spacing-300;
+}
+
+.user-card,
+.timesheet-card {
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: @Navy-900;
+}
+
+.user-card {
+  .user {
+    display: flex;
+    align-items: center;
+    gap: @spacing-300;
+
+    padding: @spacing-400;
+    background-color: @Purple-600;
+    border-radius: inherit;
+
+    .avatar {
+      display: flex;
+      max-width: 4rem;
+      width: 4rem;
+
+      border: 3px solid white;
+      border-radius: 50%;
+    }
+
+    .name {
+      display: flex;
+      flex-direction: column;
+      gap: @spacing-100;
+
+      & p:first-child {
+        color: @Navy-200;
+        font-size: @tp-6-size;
+        line-height: @tp-6-l-height;
+      }
+
+      & p:nth-child(2) {
+        font-size: @tp-4-size;
+        line-height: @tp-4-l-height;
+      }
+    }
+  }
+
+  .time-span {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 3rem;
+    gap: @spacing-100;
+
+    font-size: @tp-5-size;
+    line-height: @tp-5-l-height;
+    font-weight: @tp-5-reg-weight-;
+
+    .btn {
+      color: @Purple-500;
+    }
+  }
+}
+
+.timesheet-card {
+  &.work {
+    background-color: @Orange-300-work;
+  }
+
+  &.play {
+    background-color: @Blue-300-play;
+  }
+
+  &.study {
+    background-color: @Pink-400-study;
+  }
+
+  &.exercise {
+    background-color: @Green-400-exercise;
+  }
+
+  &.social {
+    background-color: @Purple-700-social;
+  }
+
+  &.self-care {
+    background-color: @Yellow-300-self-care;
+  }
+
+  .banner {
+    padding-top: 2rem;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: -(@spacing-100 + 0.25rem);
+      right: @spacing-200;
+      max-width: 5rem;
+    }
+  }
+
+  .category {
+    padding: @spacing-300;
+
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-100;
+
+    height: 100%;
+
+    border-radius: 15px;
+    background-color: @Navy-900;
+
+    &:hover {
+      background-color: @Navy-800;
+      cursor: pointer;
+    }
+
+    .info,
+    .total-time {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .info {
+      font-size: @tp-5-size;
+      line-height: @tp-5-l-height;
+      font-weight: @tp-5-md-weight-;
+    }
+
+    .info .btn {
+      align-self: self-start;
+      font-weight: bold;
+    }
+
+    .info .btn,
+    .total-time p:nth-child(2) {
+      color: @Navy-200;
+    }
+
+    .total-time {
+      & p:nth-child(1) {
+        font-size: @tp-3-size;
+        line-height: @tp-3-l-height;
+      }
+
+      & p:nth-child(2) {
+        font-size: @tp-6-size;
+        line-height: @tp-6-l-height;
+      }
+    }
+  }
+}
+
+button.btn {
+  border: none;
+  background: transparent;
+
+  &.active {
+    color: white !important;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: white !important;
+  }
+}
+
+@media (min-width: 600px) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .user-card {
+      grid-column: span 3;
+
+      .time-span {
+        .btn {
+          &:nth-child(1) {
+            text-align: right;
+          }
+
+          &:nth-child(3) {
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    .timesheet-card {
+      .category {
+        height: 100%;
+      }
+
+      .total-time {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .curr-hours {
+          font-size: @tp-1-size;
+          line-height: @tp-1-l-height;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  #container {
+    grid-template-columns: repeat(4, 15rem);
+
+    .user-card {
+      grid-column: span 1;
+      grid-row: span 2;
+
+      .user {
+        padding-bottom: 5rem;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: @spacing-500;
+
+        .avatar {
+          max-width: 4.875rem;
+          width: 4.875rem;
+        }
+
+        .name p:last-child {
+          font-size: @tp-2-size;
+          line-height: @tp-2-l-height;
+        }
+      }
+
+      .time-span {
+        padding: 2rem;
+
+        grid-template-columns: unset;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+
+        .btn {
+          text-align: left !important;
+        }
+      }
+    }
+  }
+}
